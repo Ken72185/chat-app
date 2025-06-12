@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Chat App</title>
+  <script>
+    function masukChat() {
+      const username = document.getElementById('username').value.trim();
+      if (!username) {
+        alert('Username tidak boleh kosong!');
+        return;
+      }
+      localStorage.setItem('username', username);
+      window.location.href = '/chat.html';
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen">
+  <div class="bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-sm text-center">
+    <h1 class="text-2xl font-bold mb-4">Masuk ke Chat</h1>
+    <input type="text" id="username" placeholder="Masukkan Username" class="w-full p-2 rounded bg-gray-700 text-white mb-4">
+    <button onclick="masukChat()" class="w-full bg-blue-600 hover:bg-blue-700 transition p-2 rounded">Masuk</button>
+  </div>
+</body>
+</html>
